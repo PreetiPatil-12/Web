@@ -1,49 +1,272 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Resume – Person 3</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Priyanka S G</title>
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#fff;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --primary:#0b5ed7;
+      --gap:18px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#ffffff);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      max-width:900px;
+      width:100%;
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(15,23,42,0.08);
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:28px;
+    }
+
+    /* Responsive */
+    @media (max-width:880px){
+      .container{ grid-template-columns:1fr; padding:20px; }
+    }
+
+    /* Header / Name area */
+    .header{
+      grid-column: 1 / span 2;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      border-bottom:1px solid #eef2f7;
+      padding-bottom:14px;
+      margin-bottom:6px;
+    }
+    .name {
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .name h1{
+      margin:0;
+      font-size:28px;
+      letter-spacing: -0.4px;
+    }
+    .title{
+      color:var(--muted);
+      margin-top:4px;
+      font-size:14px;
+    }
+
+    /* Left/main column */
+    .main{
+      padding-right:4px;
+    }
+    section {
+      margin-bottom: var(--gap);
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .section-title h3{
+      margin:0;
+      font-size:16px;
+      color:var(--primary);
+      text-transform:uppercase;
+      letter-spacing:0.8px;
+    }
+    .card{
+      background:transparent;
+      padding:0;
+    }
+
+    /* Experience / Projects items */
+    .item{
+      padding:12px 0;
+      border-bottom:1px dashed #eef2f7;
+    }
+    .item:last-child{ border-bottom:0; }
+    .item .role{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .item .role h4{
+      margin:0;
+      font-size:15px;
+    }
+    .item .role .period{
+      color:var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .item .company{
+      color:var(--muted);
+      font-size:14px;
+      margin:6px 0 8px 0;
+    }
+    .item p{ margin:0 0 8px 0; color:#27303b; font-size:14px; line-height:1.45; }
+    .bullets{ margin:6px 0 0 18px; color:#2b3138; }
+    .bullets li{ margin-bottom:8px; }
+
+    /* Right/sidebar */
+    aside{
+      background:linear-gradient(180deg, #ffffff, #fbfdff);
+      border-left:1px solid #eef2f7;
+      padding-left:18px;
+    }
+    .contact a { display:block; text-decoration:none; color:var(--accent); margin-bottom:6px; font-size:14px; }
+    .muted{ color:var(--muted); font-size:13px; }
+    .skills { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+    .skill { background:#eef6ff; padding:6px 10px; border-radius:999px; font-size:13px; color:#0b4296; }
+    .edu-item{ margin-bottom:12px; }
+    footer { text-align:center; font-size:12px; color:var(--muted); margin-top:8px; }
+  </style>
 </head>
-
 <body>
+  <main class="container" role="main" aria-label="Resume">
+    <header class="header">
+      <div class="name">
+        <div>
+          <h1>Priya Priyanka</h1>
+          <div class="title">Computer Science Student · Aspiring Software Engineer</div>
+        </div>
+      </div>
+      <div class="meta muted" style="text-align:right">
+        <div><strong>Phone</strong><br /><a href="tel:+916364719522">+91 63647 19522</a></div>
+        <div style="margin-top:8px"><strong>Email</strong><br /><a href="mailto:priyapriyanka00815@gmail.com">priyapriyanka00815@gmail.com</a></div>
+        <div style="margin-top:8px"><strong>LinkedIn</strong><br /><a href="https://www.linkedin.com/in/priya-priyanka-18a1b8374/" target="_blank" rel="noopener">linkedin.com/in/priya-priyanka-18a1b8374</a></div>
+      </div>
+    </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Back to Profiles</a></li>
+    <!-- Main / left column -->
+    <section class="main card">
+      <!-- Summary -->
+      <section aria-labelledby="summary">
+        <div class="section-title">
+          <h3 id="summary">Summary</h3>
+        </div>
+        <p>
+          A motivated Computer Science student with hands-on coursework and projects in data structures, algorithms, and web development. Strong problem-solving skills, teamwork experience, and eagerness to learn modern software practices.
+        </p>
+      </section>
+
+      <!-- Experience -->
+      <section aria-labelledby="exp">
+        <div class="section-title">
+          <h3 id="exp">Experience</h3>
+        </div>
+
+        <!-- Example item — replace with actual content -->
+        <div class="item">
+          <div class="role">
+            <h4>Intern / Project Contributor</h4>
+            <div class="period muted">Jun 2025 — Aug 2025</div>
+          </div>
+          <div class="company">Organization / College Name</div>
+          <p>Short summary line describing the role and your main contribution.</p>
+          <ul class="bullets">
+            <li>Implemented feature X using Java / Python, improving Y by Z%.</li>
+            <li>Built a responsive web frontend for the project and integrated REST APIs.</li>
+          </ul>
+        </div>
+
+        <!-- Add more experience items as needed -->
+      </section>
+
+      <!-- Projects -->
+      <section aria-labelledby="projects">
+        <div class="section-title">
+          <h3 id="projects">Projects</h3>
+        </div>
+
+        <div class="item">
+          <div class="role">
+            <h4>Project Title — Short Tagline</h4>
+            <div class="period muted">2025</div>
+          </div>
+          <div class="company muted">Tech / Tools: Java, Spring Boot, React</div>
+          <p>One-line summary of what the project does and its impact.</p>
+          <ul class="bullets">
+            <li>Key technical detail or algorithm you built.</li>
+            <li>What you learned or measurable outcome.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- Education -->
+      <section aria-labelledby="education">
+        <div class="section-title">
+          <h3 id="education">Education</h3>
+        </div>
+        <div class="item">
+          <div class="role">
+            <h4>Bachelor of Engineering — Computer Science</h4>
+            <div class="period muted">Expected 2026</div>
+          </div>
+          <div class="company muted">College / University Name — Location</div>
+          <p>Relevant coursework: Data Structures, DBMS, Operating Systems, Computer Networks</p>
+        </div>
+      </section>
+
+      <!-- Certifications / Achievements -->
+      <section aria-labelledby="achieve">
+        <div class="section-title">
+          <h3 id="achieve">Achievements & Certifications</h3>
+        </div>
+        <ul class="bullets">
+          <li>Certified in ... (replace with details)</li>
+          <li>Won hackathon / placed in coding contest — details</li>
         </ul>
-    </nav>
-
-    <section class="container">
-        <h1>Resume – Anita Deshmukh</h1>
-
-        <h2>Education</h2>
-        <ul>
-            <li>B.Tech (Information Technology), PQR University</li>
-        </ul>
-
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript, React</li>
-            <li>UI/UX Design</li>
-            <li>Figma, Canva</li>
-        </ul>
-
-        <h2>Projects</h2>
-        <ul>
-            <li>Portfolio Website with Modern UI Design</li>
-            <li>Food Delivery Web App (Frontend)</li>
-            <li>Smart Attendance System (Mini Project)</li>
-        </ul>
-
-        <h2>Strengths</h2>
-        <ul>
-            <li>Creative Problem Solver</li>
-            <li>Strong Visual Design Sense</li>
-            <li>Good Communication & Teamwork</li>
-        </ul>
-
+      </section>
     </section>
 
+    <!-- Right / sidebar -->
+    <aside role="complementary" aria-label="Sidebar">
+      <section class="contact">
+        <div class="section-title"><h3>Contact</h3></div>
+        <a href="mailto:priyapriyanka00815@gmail.com">priyapriyanka00815@gmail.com</a>
+        <a href="tel:+916364719522">+91 63647 19522</a>
+        <a href="https://www.linkedin.com/in/priya-priyanka-18a1b8374/" target="_blank" rel="noopener">LinkedIn</a>
+      </section>
+
+      <section aria-labelledby="skills">
+        <div class="section-title"><h3 id="skills">Skills</h3></div>
+        <div class="skills">
+          <span class="skill">Java</span>
+          <span class="skill">Python</span>
+          <span class="skill">HTML/CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Git</span>
+        </div>
+      </section>
+
+      <section aria-labelledby="tools">
+        <div class="section-title"><h3 id="tools">Tools</h3></div>
+        <div class="muted">VS Code · GitHub · IntelliJ IDEA · Postman</div>
+      </section>
+
+      <section aria-labelledby="languages" style="margin-top:12px">
+        <div class="section-title"><h3 id="languages">Languages</h3></div>
+        <div class="muted">English (Fluent) · Hindi (Native)</div>
+      </section>
+    </aside>
+  </main>
 </body>
 </html>
